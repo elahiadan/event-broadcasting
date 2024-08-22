@@ -45,3 +45,21 @@
     PUSHER_SCHEME=http
 
     PUSHER_APP_CLUSTER=mt1
+
+
+
+    ## PUSHER
+
+    1.create app on pusher.com
+    
+    2.added 
+    
+        PUSHER_APP_ID=from_pushetr
+    
+        PUSHER_APP_KEY=from_pushetr
+    
+        PUSHER_APP_SECRET=from_pushetr
+    
+        PUSHER_APP_CLUSTER=ap2
+    
+    3. added template for html rendering from pusher

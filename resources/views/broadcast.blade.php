@@ -16,8 +16,8 @@
 <body>
     <h1>Broadcasting message</h1>
     <script>
-        Echo.channel('channel-name')
-            .listen('BroadcasrEvent', (e) => {
+        Echo.channel('channel-name-broadcast')
+            .listen('BroadcastEvent', (e) => {
                 console.log(e);
             });
     </script>

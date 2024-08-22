@@ -1,6 +1,7 @@
 <?php
 
-use App\Events\BroadcasrEvent;
+use App\Events\BroadcastEvent;
+use App\Events\BroadcastWithPusherEvent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,12 @@ Route::get('/', function () {
 
 
 Route::get('/event', function () {
-    event(new BroadcasrEvent());
+    event(new BroadcastEvent());
     return view('broadcast');
+});
+
+
+Route::get('/pusher', function () {
+    event(new BroadcastWithPusherEvent());
+    return view('broadcasting-with-pusher');
 });

@@ -10,28 +10,22 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class BroadcasrEvent implements ShouldBroadcast
+class BroadcastWithPusherEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    /**
-     * Create a new event instance.
-     */
     public $data;
     public function __construct()
     {
-        $this->data = "Hello Event calss";
+        $this->data = "Broadcasting with Pusher";
+    }
+    public function broadcastOn()
+    {
+        return ['channel-name-broadcast-with-pusher'];
     }
 
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return array<int, \Illuminate\Broadcasting\Channel>
-     */
-    public function broadcastOn(): array
+    public function broadcastAs()
     {
-        return [
-            new PrivateChannel('channel-name'),
-        ];
+        return 'channel-name-broadcast-with-pusher';
     }
 }
